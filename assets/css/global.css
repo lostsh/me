@@ -62,4 +62,5 @@ hr{
     font-family: 'CourrierNewStyle';
     font-style: normal;
     src: url("../fonts/courrierNewStyle.woff2") format('woff2');
+    font-display: swap;/*Used to increase page speed*/
 }
