@@ -1,3 +1,36 @@
+header{
+    margin: 0 0 20px 0;
+}
 header img{
     width: 100%;
+}
+header nav{
+    display: flex;
+    justify-content: space-evenly;
+}
+header nav>span{
+    display: flex;
+}
+.icon{
+    clear: both;
+    background-image: url("../img/link.svg");
+    background-size: cover;
+    opacity: 0.8;
+    
+    width: 15px;
+    height: 15px;
+    margin: 0 5px 0 5px;
+}
+.icon-github{
+    background-image: url("../img/GitHub-Mark-Light-32px.png");
+}
+.icon-twitter{
+    background-image: url("../img/Twitter-logo.svg");
+    width: 25px;
+    height: 25px;
+}
+.icon-itchio{
+    background-image: url("../img/itchio_icon.svg");
+    width: 17px;
+    height: 17px;
 }
