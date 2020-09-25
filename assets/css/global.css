@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #1e1e1e;
+    color: #dedede;
+    font-family:'CourrierNewStyle',Lato,LatoExtended,sans-serif
+}
+.main{
+    margin: 0 auto;
+    max-width: 960px;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+footer{
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+
+    font-size: small;
+    width: 100%;
+    line-height: 40px;
+    border-top: 1px solid #444444;
+}
+footer p{
+    margin: 5px 10vw 5px 10vw;
+    padding: 0;
+}
+
+/*=========text style========*/
+h3{
+    font-size: 1.25em;
+    margin: 0 0 10px 0;
+}
+p{
+    line-height: 1.5;
+    margin: 0 0 20px 0;
+}
+a{
+    color: #dd4a4a;
+}
+a:hover{
+    text-decoration: none;
+}
+hr{
+    background-color: #444444;
+    border: 0;
+    height: 1px;
+}
+.text-center{
+    display: flex;
+    justify-content: center;
+}
+.text-left{
+    float: left;
+}
+.text-right{
+    float: right;
+}
+@font-face {
+    font-family: 'CourrierNewStyle';
+    font-style: normal;
+    src: url("../fonts/courrierNewStyle.woff2") format('woff2');
+}
