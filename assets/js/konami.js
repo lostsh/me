@@ -102,7 +102,7 @@ function glitchify(bodyElement){
         var glitchDiv = document.createElement("div");
         glitchDiv.className = "glitchBox";
         glitchDiv.style.position = "absolute";
-        glitchDiv.style.backgroundColor = "grey";
+        glitchDiv.style.backgroundColor = "black";
         bodyElement.appendChild(glitchDiv);
     }
     let glitchBoxes = document.getElementsByClassName('glitchBox');
@@ -110,10 +110,10 @@ function glitchify(bodyElement){
     setInterval(function(){
         for(var i=0;i<glitchBoxes.length;i++){
             glitchBoxes[i].style.top = randInt(100)+"vh";
-            glitchBoxes[i].style.left = randInt(100)+"vw";
-            glitchBoxes[i].style.width = randInt(100)+"px";
-            glitchBoxes[i].style.height = randInt(20)+"px";
-            glitchBoxes[i].style.opacity = Math.random()*0.1;
+            glitchBoxes[i].style.left = randInt(99)+"vw";
+            glitchBoxes[i].style.width = randInt(500)+"px";
+            glitchBoxes[i].style.height = randInt(10)+"px";
+            glitchBoxes[i].style.opacity = Math.random()*0.2;
         }
     }, randInt(1000));
 }
