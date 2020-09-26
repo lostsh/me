@@ -52,11 +52,40 @@ function isValide(tabOfKeys){
 
 
 
+
+function randInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+}
+
 function displayGlitch(){
     const bodyElement = document.querySelector("body");
     window.scrollTo(0,0);
     bodyElement.style.overflow = "hidden";
 
+    var div = document.createElement("div");
+    div.style.position = "absolute";
+    div.style.top = "0";
+    div.style.left = "0";
+    div.style.width = window.innerWidth+"px";
+    div.style.height = window.innerHeight+"px";
+    div.style.backgroundColor = "grey";
+    div.style.opacity = "0.2";
+    bodyElement.appendChild(div);
+
+    setInterval(glitchify(bodyElement), 200);
+
+    /*
+    for(var i=0;i<20;i++){
+        var glitchDiv = document.createElement("div");
+        glitchDiv.style.position = "absolute";
+        glitchDiv.style.backgroundColor = "red";
+        glitchDiv.style.top = randInt(100)+"vh";
+        glitchDiv.style.left = randInt(100)+"vw";
+        glitchDiv.style.width = randInt(400)+"px";
+        glitchDiv.style.height = randInt(100)+"px";
+        bodyElement.appendChild(glitchDiv);
+    }*/
+    /*
     var div = document.createElement("div");
     div.style.position = "absolute";
     div.style.zIndex = "1";
@@ -65,29 +94,26 @@ function displayGlitch(){
     div.style.backgroundColor = "red";
     div.style.width = window.innerWidth+"px";
     div.style.height = window.innerHeight+"px";
-    div.style.opacity = "0.7";
-    var div1 = document.createElement("div");
-    div1.style.position = "absolute";
-    div1.style.zIndex = "3";
-    div1.style.top = "10px";
-    div1.style.left = "10px";
-    div1.style.backgroundColor = "blue";
-    div1.style.width = window.innerWidth-20+"px";
-    div1.style.height = window.innerHeight-20+"px";
-    div1.style.opacity = "0.7";
-    var div2 = document.createElement("div");
-    div2.style.position = "absolute";
-    div2.style.zIndex = "2";
-    div2.style.top = "5px";
-    div2.style.left = "5px";
-    div2.style.backgroundColor = "yellow";
-    div2.style.width = window.innerWidth-10+"px";
-    div2.style.height = window.innerHeight-10+"px";
-    div2.style.opacity = "0.7";
-    
+    div.style.opacity = "0.7";*/
+}
 
-    bodyElement.appendChild(div);
-    bodyElement.appendChild(div1);
-    bodyElement.appendChild(div2);
-    //document.write("Coucou toi ~");
+function glitchify(bodyElement){
+    for(var i=0;i<2820;i++){
+        var glitchDiv = document.createElement("div");
+        glitchDiv.className = "glitchBox";
+        glitchDiv.style.position = "absolute";
+        glitchDiv.style.backgroundColor = "grey";
+        bodyElement.appendChild(glitchDiv);
+    }
+    let glitchBoxes = document.getElementsByClassName('glitchBox');
+
+    setInterval(function(){
+        for(var i=0;i<glitchBoxes.length;i++){
+            glitchBoxes[i].style.top = randInt(100)+"vh";
+            glitchBoxes[i].style.left = randInt(100)+"vw";
+            glitchBoxes[i].style.width = randInt(100)+"px";
+            glitchBoxes[i].style.height = randInt(20)+"px";
+            glitchBoxes[i].style.opacity = Math.random()*0.1;
+        }
+    }, randInt(1000));
 }
