@@ -53,5 +53,41 @@ function isValide(tabOfKeys){
 
 
 function displayGlitch(){
-    document.write("Coucou toi ~");
+    const bodyElement = document.querySelector("body");
+    window.scrollTo(0,0);
+    bodyElement.style.overflow = "hidden";
+
+    var div = document.createElement("div");
+    div.style.position = "absolute";
+    div.style.zIndex = "1";
+    div.style.top = "0";
+    div.style.left = "0";
+    div.style.backgroundColor = "red";
+    div.style.width = window.innerWidth+"px";
+    div.style.height = window.innerHeight+"px";
+    div.style.opacity = "0.7";
+    var div1 = document.createElement("div");
+    div1.style.position = "absolute";
+    div1.style.zIndex = "3";
+    div1.style.top = "10px";
+    div1.style.left = "10px";
+    div1.style.backgroundColor = "blue";
+    div1.style.width = window.innerWidth-20+"px";
+    div1.style.height = window.innerHeight-20+"px";
+    div1.style.opacity = "0.7";
+    var div2 = document.createElement("div");
+    div2.style.position = "absolute";
+    div2.style.zIndex = "2";
+    div2.style.top = "5px";
+    div2.style.left = "5px";
+    div2.style.backgroundColor = "yellow";
+    div2.style.width = window.innerWidth-10+"px";
+    div2.style.height = window.innerHeight-10+"px";
+    div2.style.opacity = "0.7";
+    
+
+    bodyElement.appendChild(div);
+    bodyElement.appendChild(div1);
+    bodyElement.appendChild(div2);
+    //document.write("Coucou toi ~");
 }
