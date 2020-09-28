@@ -72,29 +72,10 @@ function displayGlitch(){
     div.style.opacity = "0.2";
     bodyElement.appendChild(div);
 
-    setInterval(glitchify(bodyElement), 200);
-
-    /*
-    for(var i=0;i<20;i++){
-        var glitchDiv = document.createElement("div");
-        glitchDiv.style.position = "absolute";
-        glitchDiv.style.backgroundColor = "red";
-        glitchDiv.style.top = randInt(100)+"vh";
-        glitchDiv.style.left = randInt(100)+"vw";
-        glitchDiv.style.width = randInt(400)+"px";
-        glitchDiv.style.height = randInt(100)+"px";
-        bodyElement.appendChild(glitchDiv);
-    }*/
-    /*
-    var div = document.createElement("div");
-    div.style.position = "absolute";
-    div.style.zIndex = "1";
-    div.style.top = "0";
-    div.style.left = "0";
-    div.style.backgroundColor = "red";
-    div.style.width = window.innerWidth+"px";
-    div.style.height = window.innerHeight+"px";
-    div.style.opacity = "0.7";*/
+    //setInterval(glitchify(bodyElement), 200);
+    //setInterval(glitchText(bodyElement), 200);
+    glitchify(bodyElement);
+    glitchText(bodyElement);
 }
 
 function glitchify(bodyElement){
@@ -116,4 +97,52 @@ function glitchify(bodyElement){
             glitchBoxes[i].style.opacity = Math.random()*0.2;
         }
     }, randInt(1000));
+}
+
+function glitchText(bodyElement){
+    var div = document.createElement("div");
+    div.style.position = "absolute";
+    div.style.top = window.innerHeight/5+"px";
+    div.style.left = window.innerWidth/5+"px";
+    div.style.width = window.innerWidth-(window.innerWidth/5)*2+"px";
+    div.style.height = window.innerHeight-(window.innerHeight/5)*2+"px";
+    div.style.backgroundColor = "black";
+    div.style.opacity = "1";
+    div.style.borderRadius = "7px";
+
+    var p = document.createElement("p");
+    p.style.margin = "1vh 1vw 1vh 1vw";
+    p.style.fontFamily = "Arial";
+    p.style.color = "white";
+    p.style.fontSize = "3em";
+    p.textContent = "coucou bla bla bla je suis tout plein de texte super ininterresatn incroyable";
+
+    setInterval(function(){
+        var shadowChoice = randInt(5);
+        var textShadowValue = "";
+        switch(shadowChoice){
+            case 0:
+                textShadowValue = "1px 1px yellow, 1px -1px red, -1px 1px blue";
+                break;
+            case 1:
+                textShadowValue = "1px -1px yellow, 1px 1px red, -1px 1px blue";
+                break;
+            case 2:
+                textShadowValue = "-1px 1px yellow, 1px -1px red, 1px 1px blue";
+                break;
+            case 3:
+                textShadowValue = "-1px -1px yellow, 1px -1px red, -1px 1px blue";
+                break;
+            case 4:
+                textShadowValue = "1px 1px yellow, -1px 1px red, -1px -1px blue";
+                break;
+            default:
+                textShadowValue = "";
+                break;
+        }
+        p.style.textShadow = textShadowValue;
+    }, 150);
+
+    div.appendChild(p);
+    bodyElement.appendChild(div);
 }
