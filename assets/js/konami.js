@@ -115,7 +115,7 @@ function glitchText(bodyElement){
     p.style.fontFamily = "Arial";
     p.style.color = "white";
     p.style.fontSize = "3em";
-    p.textContent = "coucou bla bla bla je suis tout plein de texte super ininterresatn incroyable";
+    p.textContent = "Welcome to the depths, follow the voice of the white rabbit to discover the abyssal depth of the dark side";
 
     setInterval(function(){
         var shadowChoice = randInt(5);
